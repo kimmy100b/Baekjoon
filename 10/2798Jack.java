@@ -8,7 +8,7 @@
 
 import java.util.*;
 
-class Main {
+class Jack {
     public static void main(String[] str) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();  // 카드의 개수
