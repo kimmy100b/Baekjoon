@@ -31,4 +31,3 @@ class DigitGenerator { // Digit Generator
         System.out.println(result);
     }
 }
-
