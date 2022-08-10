@@ -6,6 +6,8 @@
  * 
  */
 
+/*
+* Scanner로 푼 경우
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -30,5 +32,41 @@ class SortAsc {
             }
             System.out.println(sortArr[i]);
         }
+    }
+}
+*/
+
+// BufferedReader로 푼 경우
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+
+class SortAsc { // SortAsc
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        int N = Integer.parseInt(br.readLine());
+        int[] sortArr = new int[N];
+
+        for(int i = 0; i < N; i++){
+            sortArr[i] = Integer.parseInt(br.readLine());
+        }
+
+        for(int i = 0; i < N; i++){
+            int temp = -1;
+            for(int j = i + 1; j < N; j++) {
+                if(sortArr[i] > sortArr[j]) {
+                    temp = sortArr[i];
+                    sortArr[i] = sortArr[j];
+                    sortArr[j] = temp;
+                }
+            }
+            sb.append(sortArr[i]).append('\n');
+        }
+        System.out.println(sb);
     }
 }
